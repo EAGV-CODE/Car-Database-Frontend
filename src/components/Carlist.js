@@ -8,6 +8,8 @@ import AddCar from './AddCar.js';
 import { CSVLink } from 'react-csv';
 import Grid from '@material-ui/core/Grid';
 import Snackbar from '@material-ui/core/Snackbar';
+import Button from '@material-ui/core/Button';
+
 
 
 class Carlist extends Component {
@@ -130,6 +132,11 @@ class Carlist extends Component {
         this.setState({open: false});
     };
 
+    handleLogout = (e) => {
+        this.props.logout ();
+    };
+
+
     render() {
         const columns = [{
             Header: 'Brand',
@@ -158,25 +165,29 @@ class Carlist extends Component {
             width: 100,
             accessor: '_links.self.href',
             Cell: ({row, value}) => 
-            (<button size="small" variant="flat" color="primary" 
-            onClick={ () => {this.updateCar(row, value)}}>Save</button>)
+            (<Button size="small" variant="outlined" color="primary" 
+            onClick={ () => {this.updateCar(row, value)}}>Save</Button>)
         }, {
             id: 'delbutton',
             sortable: false,
             filterable: false,
             width: 100,
             accessor: '_links.self.href',
-            Cell: ({value}) => (<button size="small" variant="flat" color="secondary" onClick={ () => {this.confirmDelete(value)}}>Delete</button>)
+            Cell: ({value}) => (<Button size="small" variant="outlined" color="secondary" onClick={ () => {this.confirmDelete(value)}}>Delete</Button>)
         }]            
 
         return(
             <div className="App">
-                <Grid  Container>
+                <Grid  container >
                     <Grid item>
                         <AddCar addCar={this.addCar} fetchCars={this.fetchCars}/>
                     </Grid>
-                    <Grid item style={{padding: 20}}>
+                    <Grid item style={{padding: 15}}>
                     <CSVLink data = {this.state.cars} separator=";" > Export CSV </CSVLink>
+                    </Grid>
+                    <Grid item style={{'margin': '10px'}}>
+                        <Button variant="outlined" color="secondary" 
+                        onClick={this.handleLogout}>Logout</Button> 
                     </Grid>
                 </Grid>
                 

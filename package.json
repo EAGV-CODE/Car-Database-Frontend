@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.5.1",
-    "react": "^16.8.4",
+    "@material-ui/core": "^4.7.2",
+    "react": "^16.12.0",
     "react-confirm-alert": "^2.4.1",
-    "react-csv": "^1.1.1",
-    "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8",
+    "react-csv": "^1.1.2",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0",
     "react-skylight": "^0.5.1",
-    "react-table": "^6.10.3"
+    "react-table": "^6.11.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,5 +26,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "react-test-renderer": "^16.12.0"
+  }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import SkyLight from 'react-skylight';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class AddCar extends React.Component {
 
@@ -40,13 +41,13 @@ class AddCar extends React.Component {
                         <TextField label="Color" placeholder="Color" name="color" onChange={this.handleChange} /><br />
                         <TextField label="Year" placeholder="Year" name="year" onChange={this.handleChange} /><br />
                         <TextField label="Price" placeholder="Price" name="price" onChange={this.handleChange} /><br />
-                        <button variant="outlined" color="primary" onClick={this.handleSubmit}>Save</button>
-                        <button variant="outlined" color="secondary" onClick={this.cancelSubmit}>Cancel</button>
+                        <Button variant="outlined" color="primary" onClick={this.handleSubmit}>Save</Button>
+                        <Button variant="outlined" color="secondary" onClick={this.cancelSubmit}>Cancel</Button>
                     </form>
                 </SkyLight>
                 <div>
-                    <button variant="raised" color="primary" style={{'margin': '10px'}} 
-                        onClick={() => this.refs.addDialog.show()}>New car</button>
+                    <Button variant="outlined" color="primary" style={{'margin': '10px'}} 
+                        onClick={() => this.refs.addDialog.show()}>New car</Button>
                 </div>
             </div>
         );

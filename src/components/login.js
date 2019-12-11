@@ -6,6 +6,7 @@ import Carlist from './Carlist';
 import Snackbar from '@material-ui/core/Snackbar';
 
 
+
 class Login extends Component {
     constructor (props){
         super(props);
@@ -41,16 +42,19 @@ class Login extends Component {
         this.setState({ open: false});
     }
 
-    /*
+    
     logout = () => {
         sessionStorage.removeItem("jwt");
         this.setState({isAuthenticated: false});
     }
-    */
+    
+
+
+    
 
     render() {
         if (this.state.isAuthenticated === true) {
-            return (<Carlist />)
+            return (<Carlist logout={this.logout} />)
         }
         else{
             return (
@@ -60,7 +64,7 @@ class Login extends Component {
                     <TextField type="password" name="password"
                     placeholder="Password"
                     onChange={this.handleChange}/><br/>
-                    <Button variant="raised" color="primary"
+                    <Button variant="outlined" color="primary"
                     onClick={this.login}>Login</Button> 
                     <Snackbar
                         open={this.state.open} onClose={this.handleClose}
