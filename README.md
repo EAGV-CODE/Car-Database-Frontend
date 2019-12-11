@@ -1,3 +1,7 @@
+In this application I have worked with Visual Studio Code (VS Code) als open source code editor and with Node.js (an open source JavaScript-based server side environment) and create-react-app ( a starter kit made by Facebook) to create the React App, I have used different components like: react-table, react-confirm-alert, react-skylight, react-csv, Material-ui; and for testing I used Jest ( a test library for JavaScript) and Enzyme (a JavaScript library for testing the React component's output); and for deploying purposes I used Heroku CLI.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
